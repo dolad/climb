@@ -57,30 +57,41 @@
 		    				</div>
 		  </div>
 		 
-		  
-		  <div class="form-group"> 
+		 
+<div class="form-group"> 
 		    			<div class="col-sm-offset-2 col-sm-10">
 		      				<button class="btn btn-info bot" id="btn1" >Add</button>
 		    			</div>
 		  </div>
 	</form>
-		
-			<ul class='display' id="contactList">
+		<ul class='display' id="contactList">
   			</ul>
-  		
-		
-	</body>
+  		</body>
 	<script>
 
 	
-	function contact(id, first, last, phone) {
+	
+	
+	
+	my javascript start here
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+function contact(id, first, last, phone) {
     this.id = id;
     this.first = first;
     this.last = last;
     this.phone = phone;
  
 }
-
 var contacts = new Array();
 
 window.onload = init;
@@ -116,10 +127,9 @@ function addcontactsToPage() {
     ul.appendChild(listFragment);
 }
 function addcontactToPage(contactItem) {
-
-    var ul = document.getElementById("contactList");
-    var li = createNewContact(contactItem);
-    ul.appendChild(li);	
+	var ul = document.getElementById("contactList");
+        var li = createNewContact(contactItem);
+        ul.appendChild(li);	
 
     
    
@@ -128,23 +138,17 @@ function addcontactToPage(contactItem) {
 function createNewContact(contactItem) {
     var li = document.createElement("li");  
     var span= '<span>'+contactItem.last+'</span>';
-
-    li.appendChild(span)
-  
-    return li;
+	li.appendChild(span)
+  	return li;
 }
    // this collect data from the form   
 function submitFrom() {
-
     var task = document.getElementById("firstname").value;
     if (checkInputText(task, "Please enter your firstname")) return;
-
-    var who = document.getElementById("last").value;
+	var who = document.getElementById("last").value;
     if (checkInputText(who, "Please enter ur lastname")) return;
-
-    var date = document.getElementById("phonenumber").value;
+	var date = document.getElementById("phonenumber").value;
     if (checkInputText(date, "Please enter a phonenumber")) return;
-    
     var id = contacts.length;
     var contactItem = new contact(id, first, last, phone);
     contacts.push(contactItem);
@@ -165,8 +169,7 @@ function savecontactItem(contactItem) {
     if (localStorage) {
         var key = "contact" + contactItem.id;
         var item = JSON.stringify(contactItem);
-        localStorage.setItem(key, item);
-        
+        localStorage.setItem(key, item);   
     }
     else {
         console.log("Error: you don't have localStorage!");
